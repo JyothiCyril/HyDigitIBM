@@ -1,0 +1,283 @@
+
+JavaScriptExecutor : is an inteface used to perform java script sequence of actions on the browser...
+
+Scroll across the browser...
+
+ScrollBar
+Scroll till an element is found...
+
+
+TekesScreeshot interface..
+
+Take screen of a WebElement 
+Take screen of a driver
+Take screen of a full page using ASHOT api.
+
+
+Working with WebTable --> get details of TR & Content Td
+
+
+
+
+Synchronization point?
+
+Why do we need Synchronization Point
+
+When ever there is time delay between the tool and the applciation
+
+The tool is very fast in executing LOC and the application is slow... We need to synchronize the tool by pausing the execution for certain time stamp..
+
+
+What Synchronization point is
+
+it is a process of matching the anticipated time between the tool and the application...
+
+
+"WebDriver defaultly waits of '0' secs except with get() for Webdriver interface"
+
+What are the possible options available to synchronize
+
+1. Thread.sleep(timeout) : java timeout function used handle timedelay exception.
+Thread.sleep(60) --> The execution will be paused for 60 sec and jumps to next line only upon completion of 60secs....
+
+** What if the application completes the transaction in 10 seconds, using thread.sleep will still paused for 60 secs..
+
+Thread.sleep do not auto-cutoff time stamp...
+
+
+
+2. ImplicitWait : Defined on the driver instance
+
+3. ExplicitWait : set on WebElements based on the expected conditions to be matched...
+
+
+
+TestNG : Next Generation --> Testing framework used along with Selenium
+
+Why do we need TestNG?
+
+Because, Selenium do not the in-built mechanism to generate the test report....
+
+Apart, TestNG also helps to customize the code, control the flow of execution
+
+
+TestNG is design based on best practices of JUnit?
+
+What is JUnit : used by Java developers to Unit test the code..
+
+TestNG component used for system testing...
+
+
+How to configure TestNG
+
+What are the features of TestNG that need to be incorporated into the existing code...
+TestNG can facilitat :
+
+1. Test Execution report can be generated --> HTML format
+2. Control the flow of execution of the test script
+3. Increase the reusablity of the code with the same class / or to the class in the same project
+4. Parallel testing
+5. Test Suiting --> Sequential execution and parallel execution of test code 
+6. Group the methods with a class 
+7. Enable / disable methods 
+8. Prioritization
+9. Parameterization --> XML  / Data Provider
+
+
+TestNG API which has the collection of annotations....
+
+Annotations are the pre-defined class from the TestNG API which controls the execution of Method / class where ever we use it as Meta-data...
+
+Annotations always starts with '@' Symbol
+
+Ex: @Test, @BeforeTest, @AfterTest, @Parameter, @DataProvider.......
+
+Categorized into 4 types:
+
+Flow of execution
+
+@BeforeTest --> @BeforeClass --> @BeforeMethod --> @Test <-- @AfterMethod <--AfterClass <--AfterTest
+
+
+** Pre conditional and post conditional annotation are called as 'TestFixtures'
+
+We may have one or more test fixtures in a class that can be executed based on the functional flow and logical behind the code.....
+
+1. Pre-conditional annotation --> always starts/ prefixed with '@Before' : It is always executed first either before the test / class / method
+
+@BeforeTest : When the test is initialized ,when a method is prefixed/declared with @BeforeTest , which will be first method executed
+
+@BeforeClass : When the class the initialies
+
+@BeforeMethod : on or before '@Test' 
+if the class has 3 @Test method and one method declared as @BeforeMethod, Then the @BeforeMethod will executed 3 times
+
+2. Post conditional annotation --> always start / prefixed with '@After'
+
+It is always executed after test / class / method based on the type of annotation
+
+AfterTest , AfterClass ,AfterMethod
+
+
+
+3. Test annotation : @Test : When a specific method which exercise the potential functionality for hte code can be annotated as '@Test'..> had fdifferent types of arguments...
+
+4. Customization annotations : @Parameter & DataProvider..
+
+
+
+What is the structure of the code in TestNG
+
+
+
+Suite --> test --> Class --> method
+
+A suite can have multipl test --> Each test can have multiple classes --> Each class can have multiple methods etc..
+
+
+
+Internet Banking application
+
+1. Fund Transfer
+2. Utility Bill Payment
+3. Creditcard bill payment
+
+Pre- requisite: Customer should be Login
+
+Post condition : Upon completion of every transaction , there should be an acknowledgement generated and Logout...
+
+
+Flow : 1 
+
+Login() --> FundTransfer() --> Acknowledgement() --> Utility Bill payement --> Acknowledgement()--> CreditCard Bill payment --> Acknowledgement() --> Logout
+
+--> Acknowledgement() --> executed 3 time after FT, CC,UBP  --> created once but to reused several times...
+
+Pre-condition..
+
+Browser Opened()
+
+Flow :2 : Login(), Logout() , Acknowledgement() are reusable
+
+Script 1 : Login() --> FundTransfer() --> Acknowledgement() --> Logout()
+
+Script 2 : Login() --> Utility Bill payment() --> Acknowledgement() --> Logout()
+
+Script 3 : Login() --> CreditCard bill payment() --> Acknowledgement() --> Logout()
+
+Post condition :
+
+Delete the cookies
+Close the browser instance
+
+
+In the above scenarion: The code need to be executed in a logical way also certain functions / methods are expected to be executed repeatedly...
+
+How is TestNG contributing to enhance the test code that is reusable and easy maintainable...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3 methods @Test
+
+1 method @BeforeMethod --> 3 times
+1 method @AfterMethod --> 3times
+
+1 method @BeforeClass --> once
+1 method @AfterClass --> once
+
+Total no. of methods executed are : 11 methods
+
+Actual no. of methods are : 7
+
+
+
+
+Parameterization:
+
+Parameter is a variable / place holder
+
+Parameter holds a value
+
+Instead of hard coding the test data, it can be stored into a variable. The data is routed to the applciation through a parameter --> parameterization..
+
+As the values is sourced to the code through a parameter, it is called as parameterization...
+
+In Selenium, Parameterization can be done for single inputs , repeated inputs...
+
+
+Single input parameterization:
+Parameters sourced from XML
+Parameter sourced from properties files
+
+Repeated input parameterization:
+Parameter to be source from Object array
+Parameter can be also sourced from Excel
+Parameter can be also source from the database...
+
+
+
+
+
+Case study:TestNG, POM , DDT using data provider, to execute the test case for 
+ create dataprovider method to source the data into test case
+@DataProvider method
+"Automation Testing"
+"Software Testing"
+"Performance Testing"
+
+Testbase: @BeforeClass
+1. Open the browser
+2. Launch URL
+Testcase: @Test(dataProvider="")
+3. Type input received from Dataprovide method into search text box
+4. Capture and print all the items displayed in auto suggest
+5. Submit the input 
+6. Validate the title of the page is same as search term --> Use TestNG Asserts
+Testbase:@AfterClass
+7. Close the browser
+
+
+
+
+
+
+
+
+
+

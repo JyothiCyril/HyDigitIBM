@@ -1,0 +1,139 @@
+Test automation using Selenium..
+
+How is TestNG complimenting Selenium for Test Execution and Test Reports with different annotations...
+
+
+How Selenium & TestNG API to be integrated with Maven --> Build management tool for ease implementing and executing Selenium framework....
+
+
+What is Maven?
+
+Build management tool  to run java projects
+
+Accumulator of knowledge, as it helps  in creating and maintaining the Java project in an effective way...
+
+Primarily, if address 2 aspects of building a software
+
+1. it describes on how the software is built
+2. It describes its dependencies
+
+
+Maven cam dynamically download java libraries and maven plug-ins from onr ot more repositories (local / Global(centralized) repositories...
+
+It helps in building the project like c#, ruby,scala
+
+It offers simple project structure / setup that follows the best practices
+
+It has ability to work with  multiple projects at a time...
+
+Maven Project Structure
+
+The main advantage of having the structure is it is analogous to adopting the site view, for complete look & feel --> align the project and deliverables to be organized in a more appropriate and structure manner ---> Helps to maintain uniformity of the project developed by different resource in the same project....
+
+
+Maven being build management will help to systematically implement and execute and deliverable of the entire project under development...
+
+These Build management activities are called Goals --> Execute these Goal need a plug-in
+
+
+Pom.xml --> project object model.xml template : file descriptors that projects are present in POM.xml
+
+These are 2 basic sub directories..
+	1. Src --> Source : contain the source material for the building the project
+
+** may have some sub- directories for the each type...
+		main : for main build artifacts --> code for developement
+		test : for the test unit code and resources
+	2. target : place where we house all the output of the build
+
+
+
+
+How is Maven complimenting Test automation development using Selenium
+
+
+
+
+Execution of Selenium..
+
+
+TestNG Test
+TestNG Suite --> testNG.xml
+pom.xml --> support of maven in-built plug-in with Eclipse
+
+
+Apache Maven as a seperate tool...
+
+CLI through Aapache maven
+
+
+Steps to download  & configure Apache maven
+
+
+Google --> Search Apache Maven Download --> Visit https://maven.apache.org/download.cgi
+
+scroll down to file section and select the file Binary Zip archive --> apache-maven-3.6.3-bin.zip
+
+Download the file into the local system
+
+UnZip the file --> Copy the folder and paste it in C:/
+
+Environment variable
+
+
+set the environment variables 
+
+M2_HOME : C:\apache-maven-3.6.3
+MAVEN_HOME : C:\apache-maven-3.6.3
+
+
+configure in path
+
+Open the path --> edit --> new -->%MAVEN_HOME%\bin -->%M2_HOME%\bin --> Ok OK ...
+
+
+To check if Maven is configured
+
+
+Open command prompt --> 
+mvn --version
+
+
+
+
+
+CI / CD : technical agile....
+
+
+The project development, integration, testing and deployment should be done in an incremental approach
+
+Everyday there will be a development --> Testing --> deployment
+
+Developers & tester are day before and day behind
+
+Day 1 : Dev team --> 20 units --> Check-in to GIT hub at 5 PM
+
+CI/ CD framework constructed such way, every @5 PM the CI tool will pull all the code check=in by programmer and starts integrating...
+
+Overnight build : it is an automated approach / framework designed by the Devops engineer
+
+The code will be compile
+the code will static analysis
+the code is unit tested
+the code is integrated
+The code need to tested
+the code will be deployed on different environment
+The report should be generated
+
+
+Download Jenkins --> https://www.jenkins.io/download/ --> .msi / .war
+
+
+
+
+
+
+
+
+
+
